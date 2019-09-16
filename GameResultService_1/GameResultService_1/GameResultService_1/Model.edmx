@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="GameOperationDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Game">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GameName" Type="nvarchar" MaxLength="60" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GameResultService_1">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="win" Type="bigint" Nullable="false" />
+          <Property Name="timestamp" Type="datetime" Nullable="false" />
+          <Property Name="playerId" Type="bigint" Nullable="false" />
+          <Property Name="gameId" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Player">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NamePlayer" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__GameResul__gameI__24927208">
+          <End Role="Game" Type="Self.Game" Multiplicity="1" />
+          <End Role="GameResultService_1" Type="Self.GameResultService_1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Game">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GameResultService_1">
+              <PropertyRef Name="gameId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__GameResul__playe__239E4DCF">
+          <End Role="Player" Type="Self.Player" Multiplicity="1" />
+          <End Role="GameResultService_1" Type="Self.GameResultService_1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Player">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GameResultService_1">
+              <PropertyRef Name="playerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="GameOperationDBModelStoreContainer">
+          <EntitySet Name="Game" EntityType="Self.Game" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GameResultService_1" EntityType="Self.GameResultService_1" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Player" EntityType="Self.Player" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__GameResul__gameI__24927208" Association="Self.FK__GameResul__gameI__24927208">
+            <End Role="Game" EntitySet="Game" />
+            <End Role="GameResultService_1" EntitySet="GameResultService_1" />
+          </AssociationSet>
+          <AssociationSet Name="FK__GameResul__playe__239E4DCF" Association="Self.FK__GameResul__playe__239E4DCF">
+            <End Role="Player" EntitySet="Player" />
+            <End Role="GameResultService_1" EntitySet="GameResultService_1" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GameOperationDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Game">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GameName" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="GameResultService_1" Relationship="Self.FK__GameResul__gameI__24927208" FromRole="Game" ToRole="GameResultService_1" />
+        </EntityType>
+        <EntityType Name="GameResultService_1">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="win" Type="Int64" Nullable="false" />
+          <Property Name="timestamp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="playerId" Type="Int64" Nullable="false" />
+          <Property Name="gameId" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Game" Relationship="Self.FK__GameResul__gameI__24927208" FromRole="GameResultService_1" ToRole="Game" />
+          <NavigationProperty Name="Player" Relationship="Self.FK__GameResul__playe__239E4DCF" FromRole="GameResultService_1" ToRole="Player" />
+        </EntityType>
+        <EntityType Name="Player">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NamePlayer" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="GameResultService_1" Relationship="Self.FK__GameResul__playe__239E4DCF" FromRole="Player" ToRole="GameResultService_1" />
+        </EntityType>
+        <Association Name="FK__GameResul__gameI__24927208">
+          <End Role="Game" Type="Self.Game" Multiplicity="1" />
+          <End Role="GameResultService_1" Type="Self.GameResultService_1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Game">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GameResultService_1">
+              <PropertyRef Name="gameId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__GameResul__playe__239E4DCF">
+          <End Role="Player" Type="Self.Player" Multiplicity="1" />
+          <End Role="GameResultService_1" Type="Self.GameResultService_1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Player">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GameResultService_1">
+              <PropertyRef Name="playerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="GameOperationDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Game" EntityType="Self.Game" />
+          <EntitySet Name="GameResultService_1" EntityType="Self.GameResultService_1" />
+          <EntitySet Name="Player" EntityType="Self.Player" />
+          <AssociationSet Name="FK__GameResul__gameI__24927208" Association="Self.FK__GameResul__gameI__24927208">
+            <End Role="Game" EntitySet="Game" />
+            <End Role="GameResultService_1" EntitySet="GameResultService_1" />
+          </AssociationSet>
+          <AssociationSet Name="FK__GameResul__playe__239E4DCF" Association="Self.FK__GameResul__playe__239E4DCF">
+            <End Role="Player" EntitySet="Player" />
+            <End Role="GameResultService_1" EntitySet="GameResultService_1" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="GameOperationDBModelStoreContainer" CdmEntityContainer="GameOperationDBEntities">
+          <EntitySetMapping Name="Game">
+            <EntityTypeMapping TypeName="GameOperationDBModel.Game">
+              <MappingFragment StoreEntitySet="Game">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="GameName" ColumnName="GameName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GameResultService_1">
+            <EntityTypeMapping TypeName="GameOperationDBModel.GameResultService_1">
+              <MappingFragment StoreEntitySet="GameResultService_1">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="win" ColumnName="win" />
+                <ScalarProperty Name="timestamp" ColumnName="timestamp" />
+                <ScalarProperty Name="playerId" ColumnName="playerId" />
+                <ScalarProperty Name="gameId" ColumnName="gameId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Player">
+            <EntityTypeMapping TypeName="GameOperationDBModel.Player">
+              <MappingFragment StoreEntitySet="Player">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="NamePlayer" ColumnName="NamePlayer" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

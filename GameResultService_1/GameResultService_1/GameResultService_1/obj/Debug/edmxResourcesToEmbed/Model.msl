@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="GameOperationDBModelStoreContainer" CdmEntityContainer="GameOperationDBEntities">
+    <EntitySetMapping Name="Game">
+      <EntityTypeMapping TypeName="GameOperationDBModel.Game">
+        <MappingFragment StoreEntitySet="Game">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="GameName" ColumnName="GameName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GameResultService_1">
+      <EntityTypeMapping TypeName="GameOperationDBModel.GameResultService_1">
+        <MappingFragment StoreEntitySet="GameResultService_1">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="win" ColumnName="win" />
+          <ScalarProperty Name="timestamp" ColumnName="timestamp" />
+          <ScalarProperty Name="playerId" ColumnName="playerId" />
+          <ScalarProperty Name="gameId" ColumnName="gameId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Player">
+      <EntityTypeMapping TypeName="GameOperationDBModel.Player">
+        <MappingFragment StoreEntitySet="Player">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="NamePlayer" ColumnName="NamePlayer" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

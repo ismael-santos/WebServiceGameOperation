@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GameOperationDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Game">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GameName" Type="nvarchar" MaxLength="60" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GameResultService_1">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="win" Type="bigint" Nullable="false" />
+    <Property Name="timestamp" Type="datetime" Nullable="false" />
+    <Property Name="playerId" Type="bigint" Nullable="false" />
+    <Property Name="gameId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Player">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NamePlayer" Type="nvarchar" MaxLength="60" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__GameResul__gameI__24927208">
+    <End Role="Game" Type="Self.Game" Multiplicity="1" />
+    <End Role="GameResultService_1" Type="Self.GameResultService_1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Game">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="GameResultService_1">
+        <PropertyRef Name="gameId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__GameResul__playe__239E4DCF">
+    <End Role="Player" Type="Self.Player" Multiplicity="1" />
+    <End Role="GameResultService_1" Type="Self.GameResultService_1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Player">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="GameResultService_1">
+        <PropertyRef Name="playerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="GameOperationDBModelStoreContainer">
+    <EntitySet Name="Game" EntityType="Self.Game" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GameResultService_1" EntityType="Self.GameResultService_1" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Player" EntityType="Self.Player" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__GameResul__gameI__24927208" Association="Self.FK__GameResul__gameI__24927208">
+      <End Role="Game" EntitySet="Game" />
+      <End Role="GameResultService_1" EntitySet="GameResultService_1" />
+    </AssociationSet>
+    <AssociationSet Name="FK__GameResul__playe__239E4DCF" Association="Self.FK__GameResul__playe__239E4DCF">
+      <End Role="Player" EntitySet="Player" />
+      <End Role="GameResultService_1" EntitySet="GameResultService_1" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

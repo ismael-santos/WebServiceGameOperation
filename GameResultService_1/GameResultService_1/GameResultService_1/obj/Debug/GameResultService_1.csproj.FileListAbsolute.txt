@@ -1,0 +1,10 @@
+C:\Users\santo\Desktop\GameOperation\GameResultService_1\GameResultService_1\GameResultService_1\bin\GameResultService_1.dll.config
+C:\Users\santo\Desktop\GameOperation\GameResultService_1\GameResultService_1\GameResultService_1\bin\GameResultService_1.dll
+C:\Users\santo\Desktop\GameOperation\GameResultService_1\GameResultService_1\GameResultService_1\bin\GameResultService_1.pdb
+C:\Users\santo\Desktop\GameOperation\GameResultService_1\GameResultService_1\GameResultService_1\obj\Debug\GameResultService_1.dll
+C:\Users\santo\Desktop\GameOperation\GameResultService_1\GameResultService_1\GameResultService_1\obj\Debug\GameResultService_1.pdb
+C:\Users\santo\Desktop\GameOperation\GameResultService_1\GameResultService_1\GameResultService_1\bin\EntityFramework.dll
+C:\Users\santo\Desktop\GameOperation\GameResultService_1\GameResultService_1\GameResultService_1\bin\EntityFramework.SqlServer.dll
+C:\Users\santo\Desktop\GameOperation\GameResultService_1\GameResultService_1\GameResultService_1\bin\EntityFramework.xml
+C:\Users\santo\Desktop\GameOperation\GameResultService_1\GameResultService_1\GameResultService_1\bin\EntityFramework.SqlServer.xml
+C:\Users\santo\Desktop\GameOperation\GameResultService_1\GameResultService_1\GameResultService_1\obj\Debug\GameResultService_1.csprojResolveAssemblyReference.cache

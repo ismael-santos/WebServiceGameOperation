@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GameOperationDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Game">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GameName" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="GameResultService_1" Relationship="Self.FK__GameResul__gameI__24927208" FromRole="Game" ToRole="GameResultService_1" />
+  </EntityType>
+  <EntityType Name="GameResultService_1">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="win" Type="Int64" Nullable="false" />
+    <Property Name="timestamp" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="playerId" Type="Int64" Nullable="false" />
+    <Property Name="gameId" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="Game" Relationship="Self.FK__GameResul__gameI__24927208" FromRole="GameResultService_1" ToRole="Game" />
+    <NavigationProperty Name="Player" Relationship="Self.FK__GameResul__playe__239E4DCF" FromRole="GameResultService_1" ToRole="Player" />
+  </EntityType>
+  <EntityType Name="Player">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NamePlayer" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="GameResultService_1" Relationship="Self.FK__GameResul__playe__239E4DCF" FromRole="Player" ToRole="GameResultService_1" />
+  </EntityType>
+  <Association Name="FK__GameResul__gameI__24927208">
+    <End Role="Game" Type="Self.Game" Multiplicity="1" />
+    <End Role="GameResultService_1" Type="Self.GameResultService_1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Game">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="GameResultService_1">
+        <PropertyRef Name="gameId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__GameResul__playe__239E4DCF">
+    <End Role="Player" Type="Self.Player" Multiplicity="1" />
+    <End Role="GameResultService_1" Type="Self.GameResultService_1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Player">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="GameResultService_1">
+        <PropertyRef Name="playerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="GameOperationDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Game" EntityType="Self.Game" />
+    <EntitySet Name="GameResultService_1" EntityType="Self.GameResultService_1" />
+    <EntitySet Name="Player" EntityType="Self.Player" />
+    <AssociationSet Name="FK__GameResul__gameI__24927208" Association="Self.FK__GameResul__gameI__24927208">
+      <End Role="Game" EntitySet="Game" />
+      <End Role="GameResultService_1" EntitySet="GameResultService_1" />
+    </AssociationSet>
+    <AssociationSet Name="FK__GameResul__playe__239E4DCF" Association="Self.FK__GameResul__playe__239E4DCF">
+      <End Role="Player" EntitySet="Player" />
+      <End Role="GameResultService_1" EntitySet="GameResultService_1" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

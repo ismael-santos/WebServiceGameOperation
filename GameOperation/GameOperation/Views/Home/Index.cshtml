@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Game Operation</h1>
+    <p class="lead">Escolha uma opção abaixo</p>
+
+    <p>@Html.ActionLink("Cadastrar Player", "CadastrarPlayer", "Home")</p>
+    <p>@Html.ActionLink("Visualizar Top 100 Players", "VisualizarTop100", "Home")</p>
+    <p>@Html.ActionLink("Atualizar pontuação dos players", "AtualizarPontuacao", "Home")</p>
+
+</div>

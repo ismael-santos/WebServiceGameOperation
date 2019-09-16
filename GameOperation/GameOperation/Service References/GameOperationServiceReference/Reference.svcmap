@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c639d02a-89ef-4e95-865a-0a91ce8d005c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:9236/GameOperationService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="GameOperationService.wsdl" MetadataType="Wsdl" ID="39dcfc58-836a-4881-ad9a-83af380a8fed" SourceId="1" SourceUrl="http://localhost:9236/GameOperationService.svc?wsdl" />
+    <MetadataFile FileName="GameOperationService.disco" MetadataType="Disco" ID="b0e466db-3c4f-45e1-a63f-fd23ff35a9ca" SourceId="1" SourceUrl="http://localhost:9236/GameOperationService.svc?disco" />
+    <MetadataFile FileName="GameOperationService.xsd" MetadataType="Schema" ID="53ae4fbc-afc3-4394-b074-228b8af934c3" SourceId="1" SourceUrl="http://localhost:9236/GameOperationService.svc?xsd=xsd2" />
+    <MetadataFile FileName="GameOperationService1.xsd" MetadataType="Schema" ID="6aea2015-f6df-4ef9-aba2-d89358bd78ff" SourceId="1" SourceUrl="http://localhost:9236/GameOperationService.svc?xsd=xsd0" />
+    <MetadataFile FileName="GameOperationService2.xsd" MetadataType="Schema" ID="c7dc5d7d-2896-467b-917a-ed7900448cb9" SourceId="1" SourceUrl="http://localhost:9236/GameOperationService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

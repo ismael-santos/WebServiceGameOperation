@@ -1,0 +1,13 @@
+C:\Users\santo\Desktop\GameOperation\GameOperation\Aplicacao\bin\Debug\Aplicacao.dll
+C:\Users\santo\Desktop\GameOperation\GameOperation\Aplicacao\bin\Debug\Aplicacao.pdb
+C:\Users\santo\Desktop\GameOperation\GameOperation\Aplicacao\bin\Debug\Dominio.dll
+C:\Users\santo\Desktop\GameOperation\GameOperation\Aplicacao\bin\Debug\Repositorio.dll
+C:\Users\santo\Desktop\GameOperation\GameOperation\Aplicacao\bin\Debug\EntityFramework.dll
+C:\Users\santo\Desktop\GameOperation\GameOperation\Aplicacao\bin\Debug\Dominio.pdb
+C:\Users\santo\Desktop\GameOperation\GameOperation\Aplicacao\bin\Debug\Repositorio.pdb
+C:\Users\santo\Desktop\GameOperation\GameOperation\Aplicacao\bin\Debug\EntityFramework.xml
+C:\Users\santo\Desktop\GameOperation\GameOperation\Aplicacao\obj\Debug\Aplicacao.csprojResolveAssemblyReference.cache
+C:\Users\santo\Desktop\GameOperation\GameOperation\Aplicacao\obj\Debug\Aplicacao.dll
+C:\Users\santo\Desktop\GameOperation\GameOperation\Aplicacao\obj\Debug\Aplicacao.pdb
+C:\Users\santo\Desktop\GameOperation\GameOperation\Aplicacao\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\santo\Desktop\GameOperation\GameOperation\Aplicacao\bin\Debug\EntityFramework.SqlServer.xml

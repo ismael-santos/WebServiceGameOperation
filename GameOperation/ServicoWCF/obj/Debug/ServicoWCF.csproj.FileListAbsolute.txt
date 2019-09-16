@@ -1,0 +1,6 @@
+C:\Users\santo\Desktop\GameOperation\GameOperation\ServicoWCF\bin\Debug\ServicoWCF.dll.config
+C:\Users\santo\Desktop\GameOperation\GameOperation\ServicoWCF\bin\Debug\ServicoWCF.dll
+C:\Users\santo\Desktop\GameOperation\GameOperation\ServicoWCF\bin\Debug\ServicoWCF.pdb
+C:\Users\santo\Desktop\GameOperation\GameOperation\ServicoWCF\obj\Debug\ServicoWCF.csprojResolveAssemblyReference.cache
+C:\Users\santo\Desktop\GameOperation\GameOperation\ServicoWCF\obj\Debug\ServicoWCF.dll
+C:\Users\santo\Desktop\GameOperation\GameOperation\ServicoWCF\obj\Debug\ServicoWCF.pdb

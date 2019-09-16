@@ -1,0 +1,10 @@
+C:\Users\santo\Desktop\GameOperation\GameOperation\Dominio\bin\Debug\Dominio.dll.config
+C:\Users\santo\Desktop\GameOperation\GameOperation\Dominio\bin\Debug\Dominio.dll
+C:\Users\santo\Desktop\GameOperation\GameOperation\Dominio\bin\Debug\Dominio.pdb
+C:\Users\santo\Desktop\GameOperation\GameOperation\Dominio\bin\Debug\EntityFramework.dll
+C:\Users\santo\Desktop\GameOperation\GameOperation\Dominio\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\santo\Desktop\GameOperation\GameOperation\Dominio\bin\Debug\EntityFramework.xml
+C:\Users\santo\Desktop\GameOperation\GameOperation\Dominio\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\santo\Desktop\GameOperation\GameOperation\Dominio\obj\Debug\Dominio.dll
+C:\Users\santo\Desktop\GameOperation\GameOperation\Dominio\obj\Debug\Dominio.pdb
+C:\Users\santo\Desktop\GameOperation\GameOperation\Dominio\obj\Debug\Dominio.csprojResolveAssemblyReference.cache
